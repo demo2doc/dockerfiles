@@ -9,7 +9,6 @@ RUN apk add --no-cache \
     && \
 
     # Install wkhtmltopdf from `testing` repository
-    && \
     rm -rf /var/cache/apk && mkdir /var/cache/apk && \
     apk add qt5-qtbase-dev \
             wkhtmltopdf \
