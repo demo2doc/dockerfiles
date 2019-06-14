@@ -8,3 +8,4 @@ google-auth-httplib2
 oauth2client 
 progressbar2
 Scrapy
+imgkit
