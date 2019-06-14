@@ -1,5 +1,5 @@
 FROM neptunus/video-maker:1.0.0
 
-RUN apk add --no-cache git-lfs
+RUN  apk upgrade musl
 
 CMD echo "running ...." >> /logs && tail -f  /logs
