@@ -6,6 +6,6 @@ RUN apk upgrade -U \
  && apk add --no-cache ca-certificates ffmpeg libva-intel-driver  bash git openssh \
  && rm -rf /var/cache/*
 
-RUN pip install -r /tmp/requirements.txt
+RUN pip install --upgrade -r /tmp/requirements.txt
 
 CMD echo "running ...." >> /logs && tail -f  /logs
