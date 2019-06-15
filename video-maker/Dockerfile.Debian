@@ -5,8 +5,7 @@ ADD requirements.txt /tmp/
 RUN apt-get update && \
     apt-get install -y  wkhtmltopdf \
     ffmpeg \
-    git-lfs \
-
+    git-lfs 
 
 RUN pip install --upgrade -r /tmp/requirements.txt
 
