@@ -15,7 +15,7 @@ RUN apk add build-base \
 		               git-lfs \
 		               xvfb \
 			           dbus \
- && rm -rf /var/cache/* \
+ && rm -rf /var/cache/* 
 
 RUN pip install --upgrade -r /tmp/requirements.txt
 
