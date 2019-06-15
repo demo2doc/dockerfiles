@@ -13,7 +13,13 @@ RUN apk add build-base \
 		               git-lfs \
 		               xvfb \
 			           dbus \
-			           wkhtmltopdf \
+
+ && apk add qt5-qtbase-dev \
+            wkhtmltopdf \
+            --no-cache \
+            --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
+            --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+            --allow-untrusted \
  && rm -rf /var/cache/* 
 
 RUN pip install --upgrade -r /tmp/requirements.txt
