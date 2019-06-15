@@ -2,8 +2,6 @@ FROM python:3.7-alpine3.8
 
 ADD requirements.txt /tmp/
 
-ADD wkhtmltopdf /bin/
-
 RUN apk add build-base \
  && apk add --no-cache ca-certificates \ 
                        ffmpeg \
@@ -15,6 +13,7 @@ RUN apk add build-base \
 		               git-lfs \
 		               xvfb \
 			           dbus \
+			           wkhtmltopdf \
  && rm -rf /var/cache/* 
 
 RUN pip install --upgrade -r /tmp/requirements.txt
