@@ -19,5 +19,3 @@ RUN apk upgrade -U \
 COPY wkhtmltopdf /bin
 
 RUN pip install --upgrade -r /tmp/requirements.txt
-
-CMD echo "running ...."
