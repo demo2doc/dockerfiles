@@ -2,6 +2,8 @@ FROM python:3.7-alpine3.8
 
 ADD requirements.txt /tmp/
 
+ADD wkhtmltopdf /bin/
+
 RUN apk upgrade -U \
  && apk add build-base \
  && apk add --no-cache ca-certificates \ 
@@ -16,6 +18,6 @@ RUN apk upgrade -U \
 			           dbus \
  && rm -rf /var/cache/* \
 
-COPY wkhtmltopdf /bin
-
 RUN pip install --upgrade -r /tmp/requirements.txt
+
+CMD echo "running ...." >> /logs && tail -f  /logs
