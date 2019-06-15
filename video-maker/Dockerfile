@@ -20,4 +20,4 @@ COPY wkhtmltopdf /bin
 
 RUN pip install --upgrade -r /tmp/requirements.txt
 
-CMD echo "running ...." >> /logs && tail -f  /logs
+CMD echo "running ...."
