@@ -4,8 +4,7 @@ ADD requirements.txt /tmp/
 
 ADD wkhtmltopdf /bin/
 
-RUN apk upgrade -U \
- && apk add build-base \
+RUN apk add build-base \
  && apk add --no-cache ca-certificates \ 
                        ffmpeg \
                        libva-intel-driver  bash git openssh  gcc \
