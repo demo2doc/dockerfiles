@@ -8,7 +8,7 @@ RUN apt-get update && \
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash  && \
     apt-get install -y  git-lfs \
     && curl https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb -o /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb \
-    && dpkg -i /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb 
+    && apt-get install -y  /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb 
    
 RUN pip install --upgrade -r /tmp/requirements.txt &&  rm -rf /tmp/
 
