@@ -1,5 +1,7 @@
 FROM python:3.7-alpine3.8
 
+ADD requirements.txt /tmp/
+
 RUN apk upgrade -U \
  && apk add build-base \
  && apk add --no-cache ca-certificates \ 
@@ -8,27 +10,13 @@ RUN apk upgrade -U \
                        musl-dev  libffi-dev openssl-dev libxml2-dev libxslt-dev openssh-client  \
                        libgcc libstdc++ libx11 glib libxrender libxext libintl \
 				       libcrypto1.0 libssl1.0 \
-				       ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family fontconfig \
+				       ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family  \
 		               git-lfs \
 		               xvfb \
 			           dbus \
- && apk add qt5-qtbase-dev \
-            wkhtmltopdf \
-            --no-cache \
-            --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
-            --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-            --allow-untrusted \
  && rm -rf /var/cache/* \
 
- && \
-    # Wrapper for xvfb
-    mv /usr/bin/wkhtmltopdf /usr/bin/wkhtmltopdf-origin && \
-    echo $'#!/usr/bin/env sh\n\
-Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset & \n\
-DISPLAY=:0.0 wkhtmltopdf-origin $@ \n\
-killall Xvfb\
-' > /usr/bin/wkhtmltopdf && \
-    chmod +x /usr/bin/wkhtmltopdf
+COPY wkhtmltopdf /bin
 
 RUN pip install --upgrade -r /tmp/requirements.txt
 
