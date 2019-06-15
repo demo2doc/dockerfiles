@@ -18,7 +18,7 @@ RUN apk upgrade -U \
             --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ \
             --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
             --allow-untrusted \
- && rm -rf /var/cache/*
+ && rm -rf /var/cache/* \
 
  && \
     # Wrapper for xvfb
