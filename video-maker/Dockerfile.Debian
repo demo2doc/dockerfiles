@@ -3,10 +3,16 @@ FROM python:3.7.3-stretch
 ADD requirements.txt /tmp/
 
 RUN apt-get update && \
-    apt-get install -y  wkhtmltopdf xvfb\
+    apt-get install -y  wkhtmltopdf xvfb  xauth xfonts-base xfonts-75dpi fontconfig \
     ffmpeg && \
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash  && \
-    apt-get install -y  git-lfs 
+    apt-get install -y  git-lfs \
+    && \
+    echo 'xvfb-run --server-args="-screen 0, 1024x768x24" /usr/bin/wkhtmltopdf $*' > /usr/bin/wkhtmltopdf.sh \
+    && \
+    chmod a+rx /usr/bin/wkhtmltopdf.sh \
+    && \
+    ln -s /usr/bin/wkhtmltopdf.sh /usr/local/sbin/wkhtmltopdf
 
 RUN pip install --upgrade -r /tmp/requirements.txt
 
