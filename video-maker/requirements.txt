@@ -9,3 +9,4 @@ oauth2client
 progressbar2
 Scrapy
 imgkit
+youtube-dl
