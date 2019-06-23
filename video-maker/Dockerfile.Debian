@@ -9,10 +9,8 @@ RUN apt-get update && \
     && apt-get install -y  git-lfs \
     && curl -L https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb -o /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb \
     && apt-get install -y  /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb \
-    && curl -sL https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh -o install_nvm.sh  | bash \
-    && find / -name nvm \
-    && . ~/.profile \
-    && nvm install 8.11.1  \
+    && curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - \
+    && apt-get install -y  build-essential nodejs \
     && node -v  \
     && npm install -g hexo-cli
     
