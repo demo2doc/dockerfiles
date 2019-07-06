@@ -10,3 +10,4 @@ progressbar2
 Scrapy
 imgkit
 youtube-dl
+you-get
