@@ -1,5 +1,7 @@
 FROM docker:stable
 
+ADD requirements.txt /tmp/
+
 # ensure local python is preferred over distribution python
 ENV PATH /usr/local/bin:$PATH
 
@@ -166,3 +168,4 @@ RUN set -ex; \
 		\) -exec rm -rf '{}' +; \
 	rm -f get-pip.py
 
+RUN pip install --upgrade -r /tmp/requirements.txt &&  rm -rf /tmp/
