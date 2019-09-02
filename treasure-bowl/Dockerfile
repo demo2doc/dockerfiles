@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 
 # install ca-certificates so that HTTPS works consistently
 # other runtime dependencies for Python are installed later
-RUN apk add --no-cache ca-certificates openssh-client git curl \
+RUN apk add --no-cache ca-certificates openssh-client git curl gcc bash \
     && curl -sLO https://github.com/github/git-lfs/releases/download/v2.0.1/git-lfs-linux-amd64-2.0.1.tar.gz \
     && tar zxvf git-lfs-linux-amd64-2.0.1.tar.gz \
     && mv git-lfs-2.0.1/git-lfs /usr/bin/ \
