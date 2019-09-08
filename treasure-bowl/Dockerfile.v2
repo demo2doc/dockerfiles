@@ -1,0 +1,8 @@
+FROM  neptunus/treasure-bowl:1.0.0
+
+ADD requirements.v2.txt /tmp/
+
+RUN apk --no-cache add \
+        libc6-compat 
+
+RUN pip install --upgrade -r /tmp/requirements.v2.txt &&  rm -rf /tmp/

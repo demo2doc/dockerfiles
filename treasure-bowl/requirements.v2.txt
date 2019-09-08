@@ -1,0 +1,7 @@
+selenium
+google-cloud-texttospeech==0.4.0
+google-api-python-client
+google-auth-oauthlib 
+google-auth-httplib2
+oauth2client 
+progressbar2
