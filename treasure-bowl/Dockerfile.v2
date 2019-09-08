@@ -3,6 +3,7 @@ FROM neptunus/treasure-bowl:latest
 ADD requirements.v2.txt /tmp/
 
 RUN apk --no-cache add \
+		build-base \
         python \
         py-crcmod \
         libc6-compat \
