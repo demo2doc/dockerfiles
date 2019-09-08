@@ -1,4 +1,4 @@
-FROM  neptunus/treasure-bowl:1.0.0
+FROM neptunus/treasure-bowl:latest
 
 ADD requirements.v2.txt /tmp/
 
