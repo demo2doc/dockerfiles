@@ -1,6 +1,8 @@
 FROM alpine
 RUN apk add --no-cache wget
 WORKDIR /data
-RUN echo "现在时间：20190925111208"
-ENV URL https://github.com/boot2docker/boot2docker/releases/download/v18.09.9/boot2docker.iso
+RUN echo "现在时间：20191006223036"
+ENV URL https://github.com/appium/appium-desktop/releases/download/v1.15.0-1/Appium-mac-1.15.0-1.dmg
 RUN echo $URL >> download.txt && wget $URL
+VOLUME /resource/
+CMD cp -r /data/* /resource/
