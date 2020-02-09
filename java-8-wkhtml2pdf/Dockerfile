@@ -1,5 +1,7 @@
 FROM buildo/java8-wkhtmltopdf
 
-ADD java8-wkhtmltopdf/simsun.ttc /usr/share/fonts 
+RUN pwd && ls 
+
+ADD java-8-wkhtml2pdf/simsun.ttc /usr/share/fonts 
 
 RUN chmod 644 /usr/share/fonts/simsun.ttc
