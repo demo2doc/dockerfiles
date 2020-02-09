@@ -1,5 +1,5 @@
-FROM java:8 
+FROM buildo/java8-wkhtmltopdf
 
-RUN apt-get update && \
-    apt-get install -f && \
-    apt-get install -y xvfb libfontconfig wkhtmltopdf
+ADD simsun.ttc /usr/share/fonts 
+
+RUN chmod 644 /usr/share/fonts/simsun.ttc
