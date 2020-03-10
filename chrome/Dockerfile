@@ -5,3 +5,5 @@ ADD requirements.txt /requirements.txt
 USER root
 
 RUN pip3 install -r /requirements.txt
+
+USER seluser
