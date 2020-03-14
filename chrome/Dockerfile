@@ -19,4 +19,6 @@ RUN apt-get update && \
     python3.7 get-pip.py && \
     pip3 install -r /requirements.txt
 
+EXPOSE 8000
+
 USER seluser
