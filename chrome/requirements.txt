@@ -1,5 +1,5 @@
 selenium
-Scrapy==1.6.0
+Scrapy==2.6.2
 requests==2.21.0
 httplib2==0.12.3
 selenium_wire==1.0.9
